@@ -73,6 +73,7 @@ app.route("/login").post(async(req,res)=>{
 app.route('/create').post(async (req,res) => {
     const newUser = req.body;
     // console.log(newUser);
+    
    try {
         let existedUser = await userModel.findOne({username:newUser.username});
         if (existedUser){
